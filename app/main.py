@@ -90,9 +90,9 @@ KNIGHTS = {
 }
 
 
-def battle(list_of_knights: dict) -> dict:
+def battle(data_of_knights: dict) -> dict:
     knights = {}
-    for key, value in list_of_knights.items():
+    for key, value in data_of_knights.items():
         knights[key] = Knight(value)
 
     fight(knights["lancelot"], knights["mordred"])
@@ -101,8 +101,9 @@ def battle(list_of_knights: dict) -> dict:
 
     return {
         knights[knight].name: knights[knight].hp
-        for knight in list_of_knights
+        for knight in data_of_knights
     }
 
 
-print(battle(KNIGHTS))
+if __name__ == "__main__":
+    battle(KNIGHTS)
